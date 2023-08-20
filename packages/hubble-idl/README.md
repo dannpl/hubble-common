@@ -35,13 +35,13 @@ Use borrowing IDL with Anchor to get the borrowing market state (using readonly 
 
 ```js
 import { Connection, Keypair, PublicKey, clusterApiUrl } from '@solana/web3.js';
-import { Idl, Program, Provider } from '@project-serum/anchor';
+import { Idl, Program, AnchorProvider } from '@project-serum/anchor';
 import { BORROWING_IDL } from '@hubbleprotocol/hubble-idl';
 import { getConfigByCluster } from '@hubbleprotocol/hubble-config';
 
 const mainnetConfig = getConfigByCluster('mainnet-beta');
 const connection = new Connection(clusterApiUrl('mainnet-beta'));
-const provider = new Provider(
+const provider = new AnchorProvider(
   connection,
   {
     publicKey: Keypair.generate().publicKey,
